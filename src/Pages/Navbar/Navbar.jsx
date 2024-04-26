@@ -1,12 +1,26 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
+    const { LogOut, user } = useContext(AuthContext);
     const navLinks = <>
-      <li><NavLink to='/'>Home</NavLink></li>
-      <li><NavLink to='/allSpots'>All Tourists Spot</NavLink></li>
-      <li><NavLink to='/addTouristSpots'>Add Tourists Spot</NavLink></li>
-       <li><NavLink to='/myList'>My List</NavLink></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/allSpots'>All Tourists Spot</NavLink></li>
+        <li><NavLink to='/addTouristSpots'>Add Tourists Spot</NavLink></li>
+        <li><NavLink to='/myList'>My List</NavLink></li>
     </>
+    const handleLogOut = () => {
+        LogOut()
+        .then(()=> {
+            toast('LogOut Successful')
+        })
+        .catch(error => {
+            console.error(error.message)
+        })
+    }
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -23,13 +37,26 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal font-bold gap-x-4 px-1">
-                    {navLinks}
+                        {navLinks}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white"><NavLink to='/register'>Register</NavLink></button>
+                    <>
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img title={user?.displayName} alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                        </div>
+                        <button onClick={handleLogOut} className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white"><NavLink to='/login'>LogOut</NavLink></button>
+
+                    </>
+                    <>
+                        <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white"><NavLink to='/register'>Register</NavLink></button>
+                        <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white"><NavLink to='/login'>Login</NavLink></button>
+                    </>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
