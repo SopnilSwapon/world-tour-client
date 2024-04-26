@@ -2,10 +2,10 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const navLinks = <>
-     <NavLink to='/'><li>Home</li></NavLink>
-     <NavLink><li>All Tourists Spot</li></NavLink>
-     <NavLink><li>Add Tourists Spot</li></NavLink>
-     <NavLink><li>My List</li></NavLink>
+      <li><NavLink to='/'>Home</NavLink></li>
+      <li><NavLink to='/allSpots'>All Tourists Spot</NavLink></li>
+      <li><NavLink to='/addTouristSpots'>Add Tourists Spot</NavLink></li>
+       <li><NavLink to='/myList'>My List</NavLink></li>
     </>
     return (
         <div>
@@ -27,7 +27,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white"><NavLink to='/register'>Register</NavLink></button>
                 </div>
             </div>
         </div>
