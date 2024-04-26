@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
-    const { LogOut, user } = useContext(AuthContext);
+    const { LogOut, users } = useContext(AuthContext);
     const navLinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/allSpots'>All Tourists Spot</NavLink></li>
@@ -41,19 +41,27 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <>
+                    { users? 
+                        <>
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img title={user?.displayName} alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img title={
+                               `
+                                ${users?.displayName}
+                                ${users?.photoURL}
+                               `
+                                } alt="Tailwind CSS Navbar component" src={users.photoURL} />
                             </div>
                         </div>
                         <button onClick={handleLogOut} className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white"><NavLink to='/login'>LogOut</NavLink></button>
 
                     </>
+                    :
                     <>
                         <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white"><NavLink to='/register'>Register</NavLink></button>
                         <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white"><NavLink to='/login'>Login</NavLink></button>
                     </>
+                    }
                 </div>
             </div>
             <ToastContainer></ToastContainer>

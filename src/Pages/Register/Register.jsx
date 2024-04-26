@@ -5,6 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
     const [showPass, setShowPass] = useState(true);
@@ -33,12 +34,16 @@ const Register = () => {
                     title: "YAY",
                     text: "Registration Successful!",
                 });
-                form.reset();
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photo
+                })
 
             })
             .catch(error => {
                 console.error(error)
             })
+            form.reset();
     }
     const handleShowPass = () => {
         setShowPass(!showPass)
