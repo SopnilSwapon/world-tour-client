@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAMzwzLWjPDDsI331gqa1UubsX6k9oEmqY",
-  authDomain: "world-tour-client.firebaseapp.com",
-  projectId: "world-tour-client",
-  storageBucket: "world-tour-client.appspot.com",
-  messagingSenderId: "661173125174",
-  appId: "1:661173125174:web:8845c59d1b23a413245897"
+  apiKey: "AIzaSyCtrKWoZhbShfZnkjvQf98K59GoDCWYzIY",
+  authDomain: "world-tour-d6ec4.firebaseapp.com",
+  projectId: "world-tour-d6ec4",
+  storageBucket: "world-tour-d6ec4.appspot.com",
+  messagingSenderId: "966798597828",
+  appId: "1:966798597828:web:bf4682dbfb2f51fd71b391"
 };
 
 // Initialize Firebase

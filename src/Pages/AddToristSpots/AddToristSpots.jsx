@@ -34,8 +34,8 @@ const AddToristSpots = () => {
 					icon: "success",
 					title: "YAY",
 					text: "This Tour Spots Successfully added!",
-					// footer: '<a href="#">Why do I have this issue?</a>'
 			});
+			form.reset();
 				
 			}
 		})
