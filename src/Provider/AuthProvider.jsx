@@ -29,10 +29,10 @@ const AuthProvider = ({ children }) => {
     }
     //____________Google Login_______________ //
     
-    const googleProviderLogin = (provider) => {
+    const googleProviderLogin = () => {
         setLoader(true)
         // setLoading(true)
-        return signInWithPopup(auth, provider)
+        return signInWithPopup(auth, googleProvider)
     }
     //____________Google Login_______________ //
     const githubLogin = () => {
@@ -52,7 +52,6 @@ const AuthProvider = ({ children }) => {
         .then(data => {
             setSpots(data)
         });
-        setLoader(false)
     },[])
 
     const authInfo = {
@@ -69,6 +68,7 @@ const AuthProvider = ({ children }) => {
         onAuthStateChanged(auth, (currentUser) => {
             setUsers(currentUser)
             console.log(currentUser);
+            setLoader(false)
         })
     }, [])
     return (

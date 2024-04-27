@@ -1,16 +1,17 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaGooglePlusG } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-import { GoogleAuthProvider } from "firebase/auth";
 
-const googleProvider = new GoogleAuthProvider()
 const Login = () => {
-    const { login ,googleProviderLogin, githubLogin} = useContext(AuthContext)
+    const { login ,googleProviderLogin, githubLogin} = useContext(AuthContext);
+    const location = useLocation();
+    console.log(location);
+    const navigate = useNavigate();
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -24,7 +25,8 @@ const Login = () => {
                     title: "YAY",
                     text: "Login Successful!",
                 });
-            })
+                navigate(location?.state ? location.state : '/')
+             })
             .catch(error => {
                 console.error(error.message);
                 toast.error('You have an wrong email & password')
@@ -33,9 +35,10 @@ const Login = () => {
     }
     //_______________google login_____________________//
     const handleGoogleLogin = () => {
-        googleProviderLogin(googleProvider)
+        googleProviderLogin()
         .then(()=>{
-            
+            navigate(location?.state ? location.state : '/' )
+
             Swal.fire({
                 icon: "success",
                 title: "YAY",
