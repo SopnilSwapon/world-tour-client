@@ -15,29 +15,45 @@ const AuthProvider = ({ children }) => {
     // const githubProvider = new GithubAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
     const [users, setUsers] = useState(null);
+    const [touristsSpots, setSpots] = useState([]);
+    const [loader , setLoader] = useState(true);
     //____________ Create user_______________ //
     const createUser = (email, password) => {
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password)
     };
     //____________ User Login_______________ //
     const login = (email, password) => {
+        setLoader(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     //____________Google Login_______________ //
     
     const googleProviderLogin = (provider) => {
+        setLoader(true)
         // setLoading(true)
         return signInWithPopup(auth, provider)
     }
     //____________Google Login_______________ //
     const githubLogin = () => {
+        setLoader(true)
         return signInWithPopup(auth, gitHubProvider);
     }
     //____________ Log Out_______________ //
     const LogOut = () => {
+        setLoader(true)
         return signOut(auth)
     }
 
+    //____________all spots loaded function___________//
+    useEffect(()=>{
+        fetch('http://localhost:5000/spots')
+        .then(res => res.json())
+        .then(data => {
+            setSpots(data)
+        });
+        setLoader(false)
+    },[])
 
     const authInfo = {
         users,
@@ -45,7 +61,9 @@ const AuthProvider = ({ children }) => {
         login,
         googleProviderLogin,
         githubLogin,
-        LogOut
+        LogOut,
+        loader,
+        touristsSpots
     };
     useEffect(() => {
         onAuthStateChanged(auth, (currentUser) => {

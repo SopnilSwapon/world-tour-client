@@ -18,7 +18,7 @@ const ViewDetails = () => {
                     <p><span className="font-bold">Location:</span> {location}</p>
                     <div className="flex sm:flex-row justify-around">
                     <div className="card-actions justify-end">
-                        <div className="badge badge-outline p-5 badge-error font-semibold">Cost : {cost}</div>
+                        <div className="badge badge-outline p-5 badge-error font-semibold">Cost : {cost}$</div>
                         <div className="badge badge-outline badge-info p-5 font-semibold">Visitors : {visitors}</div>
                      </div>
                     <div className="card-actions justify-start">
