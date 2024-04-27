@@ -13,7 +13,7 @@ const AllTouristsSpots = () => {
     const handleSorting = () => {
         setSortActive(!sortActive);
     }
-    console.log("ktha bole", sortActive);
+    console.log(sortActive);
     return (
         <>
             <div className="w-[20%] mx-auto mt-2 mb-8">

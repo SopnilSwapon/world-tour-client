@@ -4,7 +4,10 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const AddToristSpots = () => {
 	const {users} = useContext(AuthContext);
-	console.log(users);
+	const email = users.email;
+	console.log(email);
+	
+	// console.log(users);
     const handleAddTouristSpots = e => {
         e.preventDefault();
         const form = e.target;
@@ -17,7 +20,7 @@ const AddToristSpots = () => {
         const time = form.time.value;
         const visitors = form.visitors.value;
         const photo = form.photo.value;
-        const newSpots = {country, spots, location, description, cost, session, time, visitors, photo};
+        const newSpots = {country, email, spots, location, description, cost, session, time, visitors, photo};
         console.log(newSpots);
 		fetch('http://localhost:5000/spots', {
 			method: 'POST',

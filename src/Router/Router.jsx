@@ -22,7 +22,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
         },
         {
           path: '/addTouristSpots',
-          element: <AddToristSpots></AddToristSpots>
+          element: <PrivateRouter><AddToristSpots></AddToristSpots></PrivateRouter>
         },
         {
           path: '/register',
