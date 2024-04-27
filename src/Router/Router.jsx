@@ -7,11 +7,14 @@ import Login from "../Pages/Login/Login";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 import AllTouristsSpots from "../Pages/AllToursitsSpots/AllTouristsSpots";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
+import MyList from "../Pages/MyList/MyList";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: '/',
@@ -38,6 +41,10 @@ import PrivateRouter from "./PrivateRouter/PrivateRouter";
         {
           path: '/allTouristsSpots',
           element: <AllTouristsSpots></AllTouristsSpots>
+        },
+        {
+          path: '/myList',
+          element: <PrivateRouter><MyList></MyList></PrivateRouter>
         }
       ]
     },
