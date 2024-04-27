@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types'; // ES6
+import { NavLink } from 'react-router-dom';
 
 const TouristsSpots = ({spot}) => {
-    const {photo, country, description} = spot
+    const {photo, country, description, _id} = spot
     return (
         <div>
             <div className="card w-96 glass">
@@ -13,8 +15,7 @@ const TouristsSpots = ({spot}) => {
                         }
                     
                     <div className="card-actions justify-end">
-                    <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white">view details</button>
-
+                    <NavLink to={`/viewDetails/${_id}`}><button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white">view details</button></NavLink>
                     </div>
                 </div>
             </div>
@@ -23,3 +24,6 @@ const TouristsSpots = ({spot}) => {
 };
 
 export default TouristsSpots;
+TouristsSpots.propTypes = {
+    spot: PropTypes.object
+}

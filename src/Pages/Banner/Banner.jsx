@@ -6,14 +6,14 @@ import brazilcaSpots from '../../assets/brazil.jpg'
 const Banner = () => {
     return (
         <div>
-            <div className="carousel w-full h-[700px]">
+            <div className="carousel w-full h-[500px]">
   <div id="slide1" className="carousel-item relative w-full">
-  <div className="hero bg-cover" style={{backgroundImage: `url(${canadaSpots})`}}>
+  <div className="hero bg-cover" style={{backgroundImage: `url(${mexicoSpots})`}}>
   <div className=""></div>
-  <div className="hero-content text-center text-white">
+  <div className=" text-center text-white">
     <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <h1 className="mb-5 text-5xl font-bold text-purple-600">Mexico</h1>
+      <p className="mb-5 font-semibold">This place is most of the tourism spots in this world.You cannot imagine how much people come here every single day.If you come one day then you will be surprised</p>
       <button className="btn btn-primary">Get Started</button>
     </div>
   </div>
