@@ -9,11 +9,9 @@ const AllTouristsSpots = () => {
     const sortedSpotsByCost =[...touristsSpots].sort((place1, place2) => {
         return parseInt(place1.cost) - parseInt(place2.cost)
     })
-    console.log( "sorting",sortedSpotsByCost);
     const handleSorting = () => {
         setSortActive(!sortActive);
     }
-    console.log(sortActive);
     return (
         <>
             <div className="w-[20%] mx-auto mt-2 mb-8">

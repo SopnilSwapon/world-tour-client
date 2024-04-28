@@ -10,7 +10,6 @@ import { FaGithub } from "react-icons/fa";
 const Login = () => {
     const { login ,googleProviderLogin, githubLogin} = useContext(AuthContext);
     const location = useLocation();
-    console.log(location);
     const navigate = useNavigate();
     const handleLogin = e => {
         e.preventDefault();

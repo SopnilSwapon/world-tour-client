@@ -4,10 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const AddToristSpots = () => {
 	const {users} = useContext(AuthContext);
-	const email = users.email;
-	console.log(email);
-	
-	// console.log(users);
+	const email = users?.email;	
     const handleAddTouristSpots = e => {
         e.preventDefault();
         const form = e.target;

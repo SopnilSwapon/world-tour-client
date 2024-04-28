@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'; // ES6
 const PrivateRouter = ({children}) => {
     const { users, loader } = useContext(AuthContext);
     const location = useLocation();
-    console.log(location);
 
     if(loader) {
         return <span className="loading loading-infinity loading-lg"></span>
