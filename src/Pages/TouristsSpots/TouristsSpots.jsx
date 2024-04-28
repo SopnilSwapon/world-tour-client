@@ -8,7 +8,7 @@ const TouristsSpots = ({spot}) => {
     const {users } = useContext(AuthContext);
     return (
         <div>
-            <div className="card w-96 glass">
+            <div className="card glass">
                 <figure><img src={photo} alt="car!" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{country}</h2>

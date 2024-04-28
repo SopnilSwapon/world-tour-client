@@ -15,7 +15,7 @@ const Home = () => {
                 {
                 loader ?<div className="w-5 mx-auto"><span className="loading loading-bars  loading-lg"></span></div> : <p></p>
             }
-              <div className="grid grid-cols-1 mx-auto  md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-5">
+              <div className="grid grid-cols-1 mx-auto  md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5">
               {
                     sixTouristsSpots.map(spot => <TouristsSpots
                          key={spot._id}
