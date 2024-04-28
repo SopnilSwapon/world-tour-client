@@ -5,6 +5,16 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 const List = ({ spot }) => {
     const {listedSpots} = useContext(AuthContext);
     console.log(listedSpots);
+   
+    const handleSpotsDelete = () => {
+        fetch(`http://localhost:5000/spots/${spot._id}` , {
+            method: 'DELETE'
+        })
+        .then( ()=> {
+            console.log('successfully deleted');
+            window.location.reload();
+        })
+    }
     return (
         <>
             <div className="overflow-x-auto">
@@ -28,7 +38,7 @@ const List = ({ spot }) => {
                                 <Link to={`/updateTouristSpot/${spot._id}`}><MdEditSquare></MdEditSquare></Link>
                             </td>
                             <td className="p-3 text-right">
-                                <span className="px-3 py-1 text-error font-semibold rounded-md dark:bg-violet-600 btn btn-sm dark:text-gray-50">
+                                <span onClick={handleSpotsDelete} className="px-3 py-1 text-error font-semibold rounded-md dark:bg-violet-600 btn btn-sm dark:text-gray-50">
                                     <span>X</span>
                                 </span>
                             </td>
