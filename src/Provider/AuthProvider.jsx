@@ -17,6 +17,7 @@ const AuthProvider = ({ children }) => {
     const [users, setUsers] = useState(null);
     const [touristsSpots, setSpots] = useState([]);
     const [loader , setLoader] = useState(true);
+    const [listedSpots, setListedSpots] = useState(null);
     //____________ Create user_______________ //
     const createUser = (email, password) => {
         setLoader(true)
@@ -52,7 +53,16 @@ const AuthProvider = ({ children }) => {
         .then(data => {
             setSpots(data)
         });
-    },[])
+    },[]);
+    // ________________my listed spots________________
+    useEffect(() => {
+        fetch(`http://localhost:5000/myList/${users?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log('inside the auth');
+                setListedSpots(data);
+            })
+    }, [users]);
 
     const authInfo = {
         users,
@@ -62,7 +72,8 @@ const AuthProvider = ({ children }) => {
         githubLogin,
         LogOut,
         loader,
-        touristsSpots
+        touristsSpots,
+        listedSpots
     };
     useEffect(() => {
         onAuthStateChanged(auth, (currentUser) => {

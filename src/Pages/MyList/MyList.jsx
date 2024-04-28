@@ -1,18 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import List from "./List/List";
 
 const MyList = () => {
-    const { users } = useContext(AuthContext);
-    const [listedSpots, setListedSpots] = useState(null);
-    useEffect(() => {
-        fetch(`http://localhost:5000/myList/${users?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setListedSpots(data)
-            })
-    }, [users])
+    const { listedSpots } = useContext(AuthContext);
+    console.log(listedSpots);
+   
     return (
         <>
             <h2 className="text-3xl text-center text-purple-400 font-bold">I Will Visit These Famous Spots</h2>

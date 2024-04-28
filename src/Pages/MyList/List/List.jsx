@@ -1,5 +1,10 @@
+import { useContext } from "react";
 import { MdEditSquare } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 const List = ({ spot }) => {
+    const {listedSpots} = useContext(AuthContext);
+    console.log(listedSpots);
     return (
         <>
             <div className="overflow-x-auto">
@@ -20,7 +25,7 @@ const List = ({ spot }) => {
                                 <p className="dark:text-gray-600">{spot.time}</p>
                             </td> */}
                             <td className=" text-purple-500 text-right text-xl badge badge-outline btn">
-                                <MdEditSquare></MdEditSquare>
+                                <Link to={`/updateTouristSpot/${spot._id}`}><MdEditSquare></MdEditSquare></Link>
                             </td>
                             <td className="p-3 text-right">
                                 <span className="px-3 py-1 text-error font-semibold rounded-md dark:bg-violet-600 btn btn-sm dark:text-gray-50">
