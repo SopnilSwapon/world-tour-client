@@ -37,7 +37,7 @@ const Navbar = () => {
     }
     return (
         <div className={`Navbar ${theme}`}>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-[#2F4F4F] rounded-lg mb-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,7 +47,8 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Word Tour</a>
+                    <a  className="badge badge-outline badge-primary p-5 text-2xl flex gap-x-0 font-bold
+                    "><span className="text-pink-300">Word</span><span className="text-purple-500 gap-x-0">Tour</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal font-bold gap-x-4 px-1">

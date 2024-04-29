@@ -3,10 +3,6 @@ import PropTypes from 'prop-types'; // ES6
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { GithubAuthProvider } from "firebase/auth";
-// import { GithubAuthProvider } from "firebase/auth/cordova";
-// import { GithubAuthProvider } from "firebase/auth";
-
-
 
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
@@ -48,7 +44,7 @@ const AuthProvider = ({ children }) => {
 
     //____________all spots loaded function___________//
     useEffect(()=>{
-        fetch('https://world-tour-server-ten.vercel.app/spots/spots')
+        fetch('https://world-tour-server-ten.vercel.app/spots')
         .then(res => res.json())
         .then(data => {
             setSpots(data)

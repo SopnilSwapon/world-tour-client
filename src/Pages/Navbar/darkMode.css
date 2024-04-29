@@ -1,8 +1,8 @@
 .dark {
-    background-color: darkslategray;
-    color: purple;
+    background-color: #fff;
+    color: white;
   }
   .light {
-    background-color: #fff;
-    /* color: #333; */
+    background-color:darkslategray;
+    color: white;
   }

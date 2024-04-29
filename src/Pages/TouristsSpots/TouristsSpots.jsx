@@ -12,12 +12,8 @@ const TouristsSpots = ({spot}) => {
                 <figure><img src={photo} alt="car!" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{country}</h2>
-                    
-                        {/* {
-                            description.length > 10 ? <p>{description.slice(0, 160)}</p> : <p>{description}</p>
-                        } */}
                      <div className="card-actions">
-                    <div className="badge badge-outline p-5 badge-error font-semibold">Cost : {cost}</div>
+                    <div className="badge badge-outline p-5 badge-warning font-semibold">Cost : {cost}</div>
                     <div className="badge badge-outline badge-info p-5 font-semibold">Visitors : {visitors}</div>
                  </div>
                     <div className="card-actions justify-start">
