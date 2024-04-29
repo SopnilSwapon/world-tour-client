@@ -4,19 +4,20 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './darkMode.css'
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
     const [theme, setTheme] = useState('light');
     const toggleTheme = () => {
-      if (theme === 'light') {
-        setTheme('dark');
-      } else {
-        setTheme('light');
-      }
+        if (theme === 'light') {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
     };
     useEffect(() => {
         document.body.className = theme;
-      }, [theme]);
+    }, [theme]);
 
 
     const { LogOut, users } = useContext(AuthContext);
@@ -47,8 +48,8 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a  className="badge badge-outline badge-primary p-5 text-2xl flex gap-x-0 font-bold
-                    "><span className="text-pink-300">Word</span><span className="text-purple-500 gap-x-0">Tour</span></a>
+                    <a className="badge badge-outline badge-primary p-5 text-2xl flex gap-x-0 font-bold
+                    "><span className="text-purple-500">Word</span><span className=" gap-x-0 text-pink-300">Tour</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal font-bold gap-x-4 px-1">
@@ -60,12 +61,14 @@ const Navbar = () => {
                         <>
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img title={
-                                        `
-                                ${users?.displayName}
-                                ${users?.photoURL}
-                               `
-                                    } alt="Tailwind CSS Navbar component" src={users.photoURL} />
+                                    <a
+                                        data-tooltip-id="my-tooltip"
+                                        data-tooltip-content={users?.displayName}
+                                        data-tooltip-place="left"
+                                    >
+                                   <img alt="Tailwind CSS Navbar component" src={users.photoURL} />
+                                    </a>
+                                    
                                 </div>
                             </div>
                             <button onClick={handleLogOut} className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-300 text-white"><NavLink to='/login'>LogOut</NavLink></button>
@@ -86,6 +89,7 @@ const Navbar = () => {
                     </label>
                 </div>
             </div>
+            <Tooltip id="my-tooltip" />
             <ToastContainer></ToastContainer>
         </div>
     );
