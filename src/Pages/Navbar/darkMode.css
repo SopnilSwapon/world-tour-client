@@ -1,0 +1,8 @@
+.dark {
+    background-color: darkslategray;
+    color: purple;
+  }
+  .light {
+    background-color: #fff;
+    /* color: #333; */
+  }
