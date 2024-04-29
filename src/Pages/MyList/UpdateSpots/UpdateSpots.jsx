@@ -20,7 +20,7 @@ const UpdateSpots = () => {
         const photo = form.photo.value;
         const newSpots = {country, spots, location, description, cost, session, time, visitors, photo};
         console.log(newSpots);
-        fetch(`http://localhost:5000/spots/${_id}`, {
+        fetch(`https://world-tour-server-k7wjqnkwr-sopnil-swapons-projects.vercel.app/spots/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -36,7 +36,7 @@ import UpdateSpots from "../Pages/MyList/UpdateSpots/UpdateSpots";
         {
           path: '/viewDetails/:id',
           element: <PrivateRouter><ViewDetails></ViewDetails></PrivateRouter>,
-          loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+          loader: ({params}) => fetch(`https://world-tour-server-k7wjqnkwr-sopnil-swapons-projects.vercel.app/spots/${params.id}`)
 
         },
         {
@@ -50,7 +50,7 @@ import UpdateSpots from "../Pages/MyList/UpdateSpots/UpdateSpots";
         {
           path: '/updateTouristSpot/:id',
           element: <UpdateSpots></UpdateSpots>,
-          loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+          loader: ({params}) => fetch(`https://world-tour-server-k7wjqnkwr-sopnil-swapons-projects.vercel.app/spots/${params.id}`)
         }
       ]
     },
