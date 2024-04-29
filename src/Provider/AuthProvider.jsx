@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
 
     //____________all spots loaded function___________//
     useEffect(()=>{
-        fetch('https://world-tour-server-7r552nqce-sopnil-swapons-projects.vercel.app/spots')
+        fetch('https://world-tour-server-ten.vercel.app/spots/spots')
         .then(res => res.json())
         .then(data => {
             setSpots(data)
@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
     },[]);
     // ________________my listed spots________________
     useEffect(() => {
-        fetch(`https://world-tour-server-k7wjqnkwr-sopnil-swapons-projects.vercel.app/myList/${users?.email}`)
+        fetch(`https://world-tour-server-ten.vercel.app/myList/${users?.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log('inside the auth');

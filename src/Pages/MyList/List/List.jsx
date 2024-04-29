@@ -7,7 +7,7 @@ const List = ({ spot }) => {
     console.log(listedSpots);
    
     const handleSpotsDelete = () => {
-        fetch(`https://world-tour-server-k7wjqnkwr-sopnil-swapons-projects.vercel.app/spots/${spot._id}` , {
+        fetch(`https://world-tour-server-ten.vercel.app/spots/${spot._id}` , {
             method: 'DELETE'
         })
         .then( ()=> {

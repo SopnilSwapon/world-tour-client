@@ -19,7 +19,7 @@ const AddToristSpots = () => {
         const photo = form.photo.value;
         const newSpots = {country, email, spots, location, description, cost, session, time, visitors, photo};
         console.log(newSpots);
-		fetch('https://world-tour-server-k7wjqnkwr-sopnil-swapons-projects.vercel.app/spots', {
+		fetch('https://world-tour-server-ten.vercel.app/spots', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
