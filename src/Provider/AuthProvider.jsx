@@ -8,7 +8,6 @@ export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
-    // const githubProvider = new GithubAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
     const [users, setUsers] = useState(null);
     const [touristsSpots, setSpots] = useState([]);
@@ -50,7 +49,7 @@ const AuthProvider = ({ children }) => {
             setSpots(data)
         });
     },[]);
-    // ________________my listed spots________________
+    // ________________my listed spots________________//
     useEffect(() => {
         fetch(`https://world-tour-server-ten.vercel.app/myList/${users?.email}`)
             .then(res => res.json())

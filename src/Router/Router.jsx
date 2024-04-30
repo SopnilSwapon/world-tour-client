@@ -10,6 +10,7 @@ import PrivateRouter from "./PrivateRouter/PrivateRouter";
 import MyList from "../Pages/MyList/MyList";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import UpdateSpots from "../Pages/MyList/UpdateSpots/UpdateSpots";
+import CountrySpots from "../Pages/Home/Countries/CountrySpots";
 
   const router = createBrowserRouter([
     {
@@ -51,6 +52,11 @@ import UpdateSpots from "../Pages/MyList/UpdateSpots/UpdateSpots";
           path: '/updateTouristSpot/:id',
           element: <UpdateSpots></UpdateSpots>,
           loader: ({params}) => fetch(`https://world-tour-server-ten.vercel.app/spots/${params.id}`)
+        },
+        {
+          path: '/countries/:country',
+          element:<CountrySpots></CountrySpots>,
+          loader: ({params}) => fetch(`https://world-tour-server-ten.vercel.app/spots/${params.country}`)
         }
       ]
     },

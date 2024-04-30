@@ -7,9 +7,9 @@ const MyList = () => {
     console.log(listedSpots);
    
     return (
-        <>
-            <h2 className="text-3xl text-center text-purple-400 font-bold">I Will Visit These Famous Spots</h2>
-            <p className="w-[96%] md:w-[90%] lg:w-[80%] mx-auto text-center text-gray-500">
+        <div className="max-h-lvh">
+            <h2 className="text-3xl text-center pt-24 text-purple-400 font-bold">I Will Visit These Famous Spots</h2>
+            <p className="w-[96%] md:w-[90%] lg:w-[80%] mx-auto text-center text-purple-400">
                 Urban Majesty Awe-inspiring heights, a symphony of steel and glass. Amidst the chaos, harmony reigns.
                 Natures Embrace Crisp air, ablaze with autumns hues. Serenity found amidst rugged peaks.
                 Architectural Marvels Bold designs, vibrant colors. Each building a story, amidst the bustling streets.</p>
@@ -34,7 +34,7 @@ const MyList = () => {
                     }
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
