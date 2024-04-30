@@ -53,7 +53,14 @@ const Login = () => {
     const handleGithubLogin = () => {
         githubLogin()
         .then( ()=> {
-            console.log('successsssssssss')
+            
+            navigate(location?.state ? location.state : '/' )
+
+            Swal.fire({
+                icon: "success",
+                title: "YAY",
+                text: "Successfully login with google",
+            });
         })
         .catch(error => {
             console.log(error.message);
@@ -88,10 +95,10 @@ const Login = () => {
                         </form>
                         <div className="flex justify-center">
                         <button onClick={() => handleGoogleLogin()} className="p-3 text-3xl rounded-sm">
-                            <FaGooglePlusG></FaGooglePlusG>
+                            <FaGooglePlusG className="text-black"></FaGooglePlusG>
                         </button>
                         <button className="p-3 text-2xl rounded-sm">
-                           <FaGithub onClick={handleGithubLogin}></FaGithub>
+                           <FaGithub onClick={handleGithubLogin} className="text-black"></FaGithub>
                         </button>
                         </div>
                         <div className="text-center">

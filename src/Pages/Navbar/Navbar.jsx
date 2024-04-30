@@ -64,7 +64,7 @@ const Navbar = () => {
                                     <a
                                         data-tooltip-id="my-tooltip"
                                         data-tooltip-content={users?.displayName}
-                                        data-tooltip-place="left"
+                                        data-tooltip-place="top"
                                     >
                                    <img alt="Tailwind CSS Navbar component" src={users.photoURL} />
                                     </a>

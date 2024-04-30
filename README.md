@@ -7,7 +7,7 @@ Please Explore my website:
 
 Live Link: https://world-tour-d6ec4.web.app
 
-## 
+## Category Name: America
 
 - **Homepage**: Embark on a virtual journey with captivating imagery and immersive descriptions of iconic spots. Discover the rugged beauty of the Grand Canyon, the vibrant culture of Brazil's Rio de Janeiro, the majestic landscapes of Argentina's Patagonia, and more.
   

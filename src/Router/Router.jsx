@@ -37,7 +37,7 @@ import CountrySpots from "../Pages/Home/Countries/CountrySpots";
         {
           path: '/viewDetails/:id',
           element: <PrivateRouter><ViewDetails></ViewDetails></PrivateRouter>,
-          loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+          loader: ({params}) => fetch(`https://world-tour-server-ten.vercel.app/spots/${params.id}`)
 
         },
         {
@@ -56,7 +56,7 @@ import CountrySpots from "../Pages/Home/Countries/CountrySpots";
         {
           path: '/countries/:country',
           element:<CountrySpots></CountrySpots>,
-          loader: ({params}) => fetch(`http://localhost:5000/countryspots/${params.country}`)
+          loader: ({params}) => fetch(`https://world-tour-server-ten.vercel.app/${params.country}`)
         }
       ]
     },
