@@ -14,7 +14,7 @@ const AllTouristsSpots = () => {
     }
     return (
         <>
-            <div className="w-[20%] mx-auto mt-2 mb-8">
+            <div className="w-[20%] mx-auto mt-2 mb-8 pt-24">
                 <div className="dropdown">
                         <div tabIndex={0} role="button" className="badge badge-outline p-4 badge-secondary">
                             <h2 className="text-purple-600 font-bold">Sort By</h2>

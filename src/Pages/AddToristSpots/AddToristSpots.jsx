@@ -42,7 +42,7 @@ const AddToristSpots = () => {
     }
     return (
         <div>
-            <h2 className="text-3xl text-center font-extrabold text-purple-600 mb-5">Add Your Favorite Tourism Spots</h2>
+            <h2 className="text-3xl text-center font-extrabold pt-24 text-purple-600 mb-5">Add Your Favorite Tourism Spots</h2>
         <section className="p-6 bg-gray-400 dark:text-gray-900">
 	<form onSubmit={handleAddTouristSpots} className="container flex flex-col mx-auto space-y-12">
 		<fieldset className="gri grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">

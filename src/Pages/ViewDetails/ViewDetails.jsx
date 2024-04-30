@@ -7,8 +7,8 @@ const ViewDetails = () => {
     console.log(spot);
     return (
         <div>
-            <h2 className="text-3xl text-gray-600 font-bold mb-5 text-center">Spots: {spots}</h2>
-            <div className="card bg-base-100 shadow-xl">
+            <h2 className="text-3xl pt-24 text-purple-600 font-bold mb-5 text-center">Spots: {spots}</h2>
+            <div className="card shadow-xl bg-sky-200 text-black">
                 <figure><img className="overflow-auto w-full h-[500px]" src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">

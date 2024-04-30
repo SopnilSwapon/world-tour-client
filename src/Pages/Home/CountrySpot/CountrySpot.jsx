@@ -6,8 +6,8 @@ const CountrySpot = ({spot}) => {
 
     return (
         <div>
-             <div className="card bg-sky-200 shadow-xl pt-24 text-gray-600 h-[600px]">
-            <figure><img src={photo} alt="Shoes" /></figure>
+             <div className="card bg-sky-200 shadow-xl text-gray-600">
+            <figure><img className="overflow-hidden" src={photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="text-2xl font-semibold mb-5">Spots: {spots}</h2>
                 <p><span className="font-bold">Average Cost:</span> {cost}$</p>
